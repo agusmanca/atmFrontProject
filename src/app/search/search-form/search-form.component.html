@@ -9,7 +9,7 @@
                     <form [formGroup]="searchForm" (ngSubmit)="searchAtm(searchForm.value)" >
                         <br><br>
                         <div class="form-group">
-                            <label for="topic">Search Topic</label>
+                            <label for="topic"><h1>Search ones ATM Here</h1></label>
                             <input type="text" class="form-control" id="topic" formControlName="topic" placeholder="Input your search here..">
                         </div>
                         
@@ -33,7 +33,6 @@
                                     </div>                                    
                                 </div>
                             </div>
-
                             
                             <div class="row"> 
                                 <div class="col-md-6">
@@ -112,7 +111,7 @@
             <br><br>
             <div class="row">
                 <div class="col-lg-auto col-md-6 mx-auto">
-                    <app-search-response [searchResponse]="getResponse()" [status]="getStatus()">                        
+                    <app-search-response [searchResponse]="getResponse()" [status]="status" (eventStatus)="cleanResult($event)">                        
                     </app-search-response>
                 </div>
             </div>            

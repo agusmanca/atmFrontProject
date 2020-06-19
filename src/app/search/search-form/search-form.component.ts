@@ -4,7 +4,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormSearch } from 'src/app/models/FormSearch';
 import { SearchAtmService } from 'src/app/services/search-atm.service';
 import { SearchResponse } from 'src/app/models/SearchResponse';
-import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-search-form',
@@ -13,9 +12,11 @@ import { isNullOrUndefined } from 'util';
 })
 export class SearchFormComponent implements OnInit {
 
+
+    public status: boolean = false;
     public searchForm: FormGroup;
     private searchResponse:Array<SearchResponse> = new Array(); 
-    
+        
     constructor(private _builder:FormBuilder, 
                 private auth:AuthService, 
                 private searchService:SearchAtmService)
@@ -35,25 +36,27 @@ export class SearchFormComponent implements OnInit {
 
     ngOnInit(): void { }
 
-    public searchAtm(value:FormSearch) {
+    public searchAtm(value:FormSearch) {        
+
         this.searchService.searchAtm(value, this.auth.getToken()).subscribe((data:Array<SearchResponse>) => {                
-                this.searchResponse = data;          
+                this.searchResponse = data;
+                if(this.searchResponse.length > 0){
+                    this.status = true;        
+                }
             },
             err => {
                 console.log(err);
+                this.status = false;
             }
         );        
     }
 
     public getResponse(): Array<SearchResponse> {
         return this.searchResponse;
-    }  
+    }     
 
-    public getStatus():boolean{
-        if(isNullOrUndefined(this.searchResponse) || this.searchResponse.length == 0){
-            return false;
-        }else{
-            return true;
-        }
+    public cleanResult(event:boolean):void{
+        this.status = event;
+        this.searchResponse = undefined;
     }
 }

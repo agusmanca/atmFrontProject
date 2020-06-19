@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { SearchResponse } from 'src/app/models/SearchResponse';
 
 @Component({
@@ -16,7 +16,17 @@ export class SearchResponseComponent implements OnInit {
   @Input()
   public status:boolean;
 
+  @Output()
+  public eventStatus: EventEmitter<boolean> = new EventEmitter();
+
   ngOnInit(): void {   
   }
+
+  public cleanResult(){      
+      this.status = false;
+      this.eventStatus.emit(false);
+  }
+
+
 
 }
