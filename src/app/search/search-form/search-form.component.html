@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="row justify-content-center">   
+        <div class="col-md-10">
+            <app-navbar></app-navbar>
+            <br><br><br><br>
+
+            <div class="row">
+                <div class="col-lg-10 col-md-6 mx-auto">
+                    <form [formGroup]="searchForm" (ngSubmit)="searchAtm(searchForm.value)" >
+                        <br><br>
+                        <div class="form-group">
+                            <label for="topic">Search Topic</label>
+                            <input type="text" class="form-control" id="topic" formControlName="topic" placeholder="Input your search here..">
+                        </div>
+                        
+                        <div class="form-group pl-4">     
+                            <div class="row">                               
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="street" id="street">
+                                        <label class="form-check-label" for="street">
+                                            Street
+                                        </label>  
+                                    </div> 
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">                                            
+                                        <input class="form-check-input" type="checkbox" formControlName="houseNum" id="houseNum">
+                                        <label class="form-check-label" for="houseNum">
+                                            House Number
+                                        </label>
+                                    </div>                                    
+                                </div>
+                            </div>
+
+                            
+                            <div class="row"> 
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="postalCode" id="postalCode">
+                                        <label class="form-check-label" for="postalCode">
+                                            Postal Code
+                                        </label>                                            
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">  
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="city" id="city">
+                                        <label class="form-check-label" for="city">
+                                            City
+                                        </label>
+                                    </div>                                      
+                                </div>                                    
+                            </div> 
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="lat" id="lat">
+                                        <label class="form-check-label" for="lat">
+                                            Latitud
+                                        </label>                                        
+                                    </div>                                        
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="long" id="long">
+                                        <label class="form-check-label" for="long">
+                                            Longitud
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="dist" id="dist">
+                                        <label class="form-check-label" for="dist">
+                                            Distance
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="type" id="type">
+                                        <label class="form-check-label" for="type">
+                                            Type
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                                               
+                        <button type="submit" class="btn btn-primary">Sign in</button>  
+                    </form>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mx-auto">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <img src="../../../assets/images/atm_1.JPG">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="row">
+                <div class="col-lg-auto col-md-6 mx-auto">
+                    <app-search-response [searchResponse]="getResponse()" [status]="getStatus()">                        
+                    </app-search-response>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

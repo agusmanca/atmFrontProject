@@ -1,0 +1,30 @@
+
+    <div *ngIf="status">   
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>                    
+                    <th scope="col-auto mx-auto">Street</th>
+                    <th scope="col-auto mx-auto">Hause Number</th>
+                    <th scope="col-auto mx-auto">Postal Code</th>
+                    <th scope="col-auto mx-auto">City</th>
+                    <th scope="col-auto mx-auto">Latitud</th>
+                    <th scope="col-auto mx-auto">Longitud</th>
+                    <th scope="col-auto mx-auto">Distancia</th>
+                    <th scope="col-auto mx-auto">Type</th>
+                </tr>
+            </thead>               
+            <tbody>                
+                <tr *ngFor="let resp of searchResponse; index as i">                       
+                    <td>{{ resp.address.street }}</td>
+                    <td>{{ resp.address.housenumber }}</td>
+                    <td>{{ resp.address.postalcode }}</td>
+                    <td>{{ resp.address.city }}</td>
+                    <td>{{ resp.address.geoLocation.lat }}</td>
+                    <td>{{ resp.address.geoLocation.lng }}</td>
+                    <td>{{ resp.distance }}</td>
+                    <td>{{ resp.type }}</td>
+                </tr>                                       
+            </tbody>
+        </table>
+    </div>
+
