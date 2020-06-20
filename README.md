@@ -27,11 +27,11 @@ The site are compose for 3 parts:
 ### 1. Loging Area
 The Router structure and the Guard component are used to protect the access to the differents apps components.
 
-The loggin area send a post require to Rest Services and recived a token to guarantee the access.
+The logging area send a post require to Rest Services and recived a token to guarantee the access.
 This token is saved on the browser Local Storage.
 
 
-![img_loggin](src/assets/images/docs/loggin.jpg)
+![img_loggin](src/assets/images/docs/loggin.JPG)
 
 
 ### 2. Main Area
@@ -39,7 +39,7 @@ The main area is just a mock of a simple web page built with different templates
 This page have a principal menu, where you can access to the ATM search area.
 
 
-![img_main](src/assets/images/docs/main.jpg)
+![img_main](src/assets/images/docs/main.JPG)
 
 
 ### 3. ATM search Area
