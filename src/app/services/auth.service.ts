@@ -25,8 +25,7 @@ export class AuthService {
   }
 
   public isLogged():boolean{
-      if(!isNullOrUndefined(this.getToken())){
-        console.log(this.getToken() + " Entro");
+      if(!isNullOrUndefined(this.getToken())){        
         return true;
       } 
 

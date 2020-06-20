@@ -24,7 +24,7 @@ import { SearchAtmService } from './services/search-atm.service';
     NavbarComponent,
     LoginComponent,
     SearchFormComponent,
-    SearchResponseComponent
+    SearchResponseComponent   
   ],
   imports: [
     BrowserModule,
