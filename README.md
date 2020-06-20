@@ -27,7 +27,7 @@ The site are compose for 3 parts:
 ### 1. Loging Area
 The Router structure and the Guard component are used to protect the access to the differents apps components.
 
-The loggin area send a post require to Rest Services and recived a token to guarantee the access.
+The logging area send a post require to Rest Services and recived a token to guarantee the access.
 This token is saved on the browser Local Storage.
 
 
