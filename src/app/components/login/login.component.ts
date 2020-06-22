@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
     isLogged:false
   }
 
+  public isFailLogging:boolean = false;
+
   ngOnInit():void {}
 
   onLogin(){   
@@ -33,12 +35,18 @@ export class LoginComponent implements OnInit {
                 this.auth.setToken(err.error.text),    //Por problema de parseo de texto plano en la rta del servicio.
                 this.auth.setUser(this.user);
                 this.user.isLogged = true;
+                this.isFailLogging = false;
                 this.router.navigate(['/'])
             }            
             if(err.status == 500){
+                this.isFailLogging= true;
                 console.log(err.message); 
             } 
         }
     );
+  }
+
+  public closeAlert():void{
+    this.isFailLogging = false;
   }
 }

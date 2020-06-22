@@ -27,7 +27,16 @@
                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                             </div>
 
-                            <p class="mt-5 mb-3 text-muted">&copy; 06-2020</p>                           
+                            <p class="mt-5 mb-3 text-muted">&copy; 06-2020</p>    
+                            
+                            <div class="alert alert-danger" role="alert" *ngIf="isFailLogging"> 
+                                <span>User or Password are wrong. Please try again.</span>
+                                <span>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeAlert()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </span>
+                            </div>
                         </form>    
                     </div>
                 </div>
