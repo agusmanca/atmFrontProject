@@ -9,7 +9,7 @@ import { SearchFormComponent } from './components/search/search-form/search-form
 const routes: Routes = [
   {path:'', component: HomeComponent, canActivate:[AuthCtrlGuard]},  
   {path:'home', component: HomeComponent, canActivate:[AuthCtrlGuard]}, 
-  {path:'buscar', component: SearchFormComponent, canActivate:[AuthCtrlGuard]},  
+  {path:'search', component: SearchFormComponent, canActivate:[AuthCtrlGuard]},  
   {path:'login', component: LoginComponent},
 ];
 
